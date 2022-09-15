@@ -2,7 +2,7 @@
 Aplikasi android bermain batu gunting kertas
 
 Untuk Android
-- Mlik file "Batu Gunting Kertas_1_1.0.apk" atau https://github.com/ikhsan-05/BatuGuntingKertas/blob/main/Batu%20Gunting%20Kertas_1_1.0.apk
+- Masuk file "Batu Gunting Kertas_1_1.0.apk" atau https://github.com/ikhsan-05/BatuGuntingKertas/blob/main/Batu%20Gunting%20Kertas_1_1.0.apk
 - Download file APK
 - Instal
 
