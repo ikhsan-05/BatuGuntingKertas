@@ -1,0 +1,174 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+/* STYLE */
+body{
+	font-size: 12px;
+	background-color: lightcyan;
+}
+
+h2{
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	width: 30%;
+	margin: 5px auto;
+	border-radius: 20px;
+}
+
+.container{
+	width: 80%;
+	margin: 20px auto;
+	position: relative;
+}
+
+.musuh{
+	background: linear-gradient(to bottom, #EF5957FF, #EF5957C2);
+	border-radius: 40px 40px 0 0;
+	padding: 10px 0 50px;
+	margin-bottom: 50px;
+}
+
+.musuh h2{
+	background-color: #DE2920FF;
+}
+
+img{
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	margin: auto;
+}
+
+.info{
+	width: 370px;
+	height: 100px;
+	line-height: 90px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -175px;
+	border-radius: 20px;
+	border: 5px solid lightcyan;
+	box-sizing: border-box;
+}
+
+.keterangan{
+	margin: auto;
+	height: 90px;
+	line-height: inherit;
+	width: 180px;
+	background-color: #A333CBFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -45px;
+	margin-left: -90px;
+	z-index: 4;
+}
+
+.sMusuh{
+	height: 90px;
+	width: 108px;
+	background-color: #DE2920FF;
+	text-align: center;
+	line-height: inherit;
+	font-size: 40px;
+	border-radius: 15px 0 0 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.sPemain{
+	height: 90px;
+	width: 108px;
+	background-color: #31CD36FF;
+	text-align: center;
+	line-height: inherit;
+	font-size: 40px;
+	border-radius: 0 15px 15px 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+table{
+	margin: auto;
+}
+
+td{
+	padding: 5px;
+}
+
+.pemain{
+	background: linear-gradient(to bottom, #9EEF9EFF, #9EEF9EC2);
+	border-radius: 0 0 40px 40px;
+	padding: 50px 0 10px;
+}
+
+.pemain h2{
+	background-color: #31CD36FF;
+}
+
+.pilihan:hover{
+	opacity: 0.6;
+}
+.pilih{
+	opacity: 0.6;
+}
