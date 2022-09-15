@@ -1,78 +1,40 @@
-// const button = document.getElementById('aa');
-// const input = document.querySelector('input');
 
-// function main(){
-// 	const mass = document.querySelector('p.input');
-// 	const keterangan = document.querySelector('#keterangan');
-// 	mass.classList.add('warning');
-// 	let pPlay = undefined;
-// 	if(input.value != ''){
-// 		let menang = undefined;
-// 		pPlay = input.value.toUpperCase();
-// 		input.value = '';
-// 		if(pPlay == 'GUNTING' || pPlay == 'BATU' || pPlay == 'KERTAS'){
-// 			// buat pilihan komputer
-// 			let pCom = Math.random()*3;
-// 			if(pCom < 1){
-// 				pCom = 'GUNTING';
-// 			}else if(pCom < 2){
-// 				pCom = 'BATU';
-// 			}else{
-// 				pCom = 'KERTAS';
-// 			}
+const imgPCom = document.querySelector('.musuh img');
+function getPCom(){
+	let pil = Math.floor(Math.random()*3);
+	if(pil == 0) return 'batu';
+	if(pil == 1) return 'gunting';
+	if(pil == 2) return 'kertas';
+}
+
+function getHasil(pCom, pPlay){
+	if(pCom == pPlay) return 'seri';
+	if(pCom == 'batu') return ((pPlay == 'kertas') ? 'menang' : 'kalah');
+	if(pCom == 'gunting') return ((pPlay == 'batu') ? 'menang' : 'kalah');
+	if(pCom == 'kertas') return ((pPlay == 'gunting') ? 'menang' : 'kalah');
+}
+
+const pPlayS = document.querySelectorAll('td img');
+pPlayS.forEach( function(element){
+	element.addEventListener('click',function(){
+		const pCom = getPCom();
+		imgPCom.setAttribute('src',`src/${pCom}.png`);
+		const pPlay = element.getAttribute('id');
+		const hasil = getHasil(pCom, pPlay);
 		
-// 			//logic membandingkan pPlay dan pCom
-// 			if(pCom != pPlay){
-// 				if(pCom == "BATU"){
-// 					menang = (pPlay == "KERTAS") ? true : false;
-// 				}else if(pCom == "KERTAS"){
-// 					menang = (pPlay == "GUNTING") ? true : false;
-// 				}else{
-// 					menang = (pPlay == "BATU") ? true : false;
-// 				}
-// 			}
-
-// 			//Tambah Skore
-// 			if(menang === true){
-// 				const sPlay = document.querySelector('tr td.sPlay');
-// 				sPlay.innerHTML = `${Number(sPlay.innerHTML)+1}`;
-// 				keterangan.innerHTML = 'MENANG komputer memilih '+pCom;
-// 			}else if(menang === false){
-// 				const sCom = document.querySelector('tr td.sCom');
-// 				sCom.innerHTML = `${Number(sCom.innerHTML)+1}`;
-// 				keterangan.innerHTML = 'KALAH komputer memilih '+pCom;
-// 			}else if(menang === undefined){
-// 				keterangan.innerHTML = 'SERI komputer memilih '+pCom;
-// 			}
-
-// 		}else{
-// 			mass.innerHTML = "Warning : Input Salah!";
-// 			mass.classList.remove('warning');
-// 		}
-// 	}else{
-// 		mass.innerHTML = "Warning : Input Kosong!";
-// 		mass.classList.remove('warning');
-// 	}
-// }
-
-// //input yang dipilih
-// button.addEventListener("click", main);
-
-document.body.addEventListener('click',function(){
-
+		setInfo(hasil);
+	});
 });
 
-
-const pCom = document.querySelector('.musuh img')
-function randomPCom(){
-	let pil = Math.floor(Math.random()*3);
-	if(pil == 0){
-		pCom.setAttribute('src', 'src/batu.png')
-	}else if(pil == 1){
-		pCom.setAttribute('src', 'src/kertas.png')
-	}else if(pilih == 2){
-		pCom.setAttribute('src', 'src/gunting.png')
+const info = document.querySelector('.info');
+function setInfo(hasil){
+	const keterangan = info.querySelector('.keterangan');
+	keterangan.innerHTML = hasil;
+	if(hasil == 'menang'){
+		const sPemain = info.querySelector('.sPemain');
+		sPemain.innerHTML = `${Number(sPemain.innerHTML) + 1}`;
+	}else if(hasil == 'kalah'){
+		const sComp = info.querySelector('.sMusuh');
+		sComp.innerHTML = `${Number(sComp.innerHTML) + 1}`;
 	}
-}
-randomPCom();
-document.body.addEventListener('click',randomPCom)
+} 
